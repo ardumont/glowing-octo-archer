@@ -45,6 +45,18 @@
     (d/set-text! (d/by-id "current") (name current))
     (d/set-text! (d/by-id "period") period)))
 
+(defn render-previous-positions
+  []
+  (let [previous-pos (get-in cv/cv [:jobs :previous-pos])
+        positions (map (fn [p]
+                         (let [{:keys [as period]} (get-in cv/cv [:jobs p])]
+                           [as "at" (name p) "for" period]))
+                       previous-pos)]
+    (doseq [p positions]
+      (d/append! (d/by-id "ppos") (str "<div>" (s/join " " p) "</div>")))
+    ))
+
 (defn ^:export main []
   (render-identity)
-  (render-current-position))
+  (render-current-position)
+  (render-previous-positions))
