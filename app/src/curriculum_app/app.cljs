@@ -41,9 +41,7 @@
   []
   (let [{:keys [current] :as current-pos} (:jobs cv/cv)
         {:keys [as period]} (current-pos current)]
-    (d/set-text! (d/by-id "as") as)
-    (d/set-text! (d/by-id "current") (name current))
-    (d/set-text! (d/by-id "period") period)))
+    (d/set-text! (d/by-id "cpos") (str as " at " (name current) " since " period))))
 
 (defn render-previous-positions
   []
