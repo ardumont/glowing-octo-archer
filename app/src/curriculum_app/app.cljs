@@ -71,10 +71,20 @@
   (let [misc (:misc cv/cv)]
     (d/set-text! (d/by-id "misc") (s/join ", " misc))))
 
+(defn render-skills
+  []
+  (let [skills (-> cv/cv :skills)
+        skills-keys (keys skills)
+        all-skills (for [k skills-keys]
+                     [(name k) (skills k)])]
+    (doseq [[s sks] all-skills]
+      (d/append! (d/by-id "skills") (str "<div>" s ": " (s/join ", " sks) "</div>")))))
+
 (defn ^:export main []
   (render-identity)
   (render-current-position)
   (render-previous-positions)
+  (render-skills)
   (render-formations)
   (render-hobbies)
   (render-misc))

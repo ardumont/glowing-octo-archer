@@ -35,7 +35,7 @@
 
    :experience   :contact-me-for-that
 
-   :technologies {:languages                ["clojure" "haskell" "ruby" "*sh" "c" "php" "*sql" "xhtml" "java" "etc..."]
+   :skills       {:languages                ["clojure" "haskell" "ruby" "*sh" "c" "php" "*sql" "xhtml" "java" "etc..."]
                   :other-languages          ["emacs-lisp" "common-lisp" "clojurescript" "objective-c" "arduino programming language"]
                   :dvcs                     ["git"]
                   :tools                    ["GNU/Linux" "emacs" "leiningen" "eclipse" "maven" "ant" "Makefile" "*sh"]
