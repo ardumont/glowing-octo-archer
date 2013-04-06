@@ -11,10 +11,11 @@
 
 (defproject curriculum-app "0.1.0-SNAPSHOT"
   :description "My cv using clojurescript and pedestal"
-  :dependencies [[org.clojure/clojure "1.5.0"]
+  :dependencies [[org.clojure/clojure "1.5.1"]
                  [org.clojure/tools.namespace "0.2.1"]
                  [domina "1.0.1"]
-                 [ch.qos.logback/logback-classic "1.0.6"]
+                 ;;                  [ch.qos.logback/logback-classic "1.0.6"]
+                 [io.pedestal/pedestal.app "0.1.2" :exclusions [ch.qos.logback/logback-classic]]
                  [org.clojure/clojurescript "0.0-1450"]
                  [io.pedestal/pedestal.app "0.1.2"]
                  [io.pedestal/pedestal.app-tools "0.1.2"]]
