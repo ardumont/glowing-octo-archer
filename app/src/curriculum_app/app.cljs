@@ -89,6 +89,14 @@
     (doseq [[p ps] all-profiles]
       (d/append! (d/by-id "profiles") (str "<div>" p ": " "<a href=\"" ps "\">" ps "</a></div>")))))
 
+(defn render-projects
+  []
+  (let [projects (-> cv/cv :projects)
+        projects-keys (keys projects)
+        all-projects (for [k projects-keys]
+                     [(name k) (projects k)])]
+    (doseq [[p ps] all-projects]
+      (d/append! (d/by-id "projects") (str "<div>" p ": " "<a href=\"" ps "\">" ps "</a></div>")))))
 
 (defn ^:export main []
   (render-identity)
@@ -96,6 +104,7 @@
   (render-previous-positions)
   (render-skills)
   (render-profiles)
+  (render-projects)
   (render-formations)
   (render-hobbies)
   (render-misc))
