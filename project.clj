@@ -9,8 +9,8 @@
 ;
 ; You must not remove this notice, or any other, from this software.
 
-(defproject helloworld-app "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
+(defproject curriculum-app "0.1.0-SNAPSHOT"
+  :description "My cv using clojurescript and pedestal"
   :dependencies [[org.clojure/clojure "1.5.0"]
                  [org.clojure/tools.namespace "0.2.1"]
                  [domina "1.0.1"]

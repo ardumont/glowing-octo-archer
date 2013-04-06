@@ -14,11 +14,11 @@
             [io.pedestal.app-tools.compile :as compile]))
 
 (def configs
-  {:helloworld-app
+  {:curriculum-app
    {:build {:watch-files (compile/html-files-in "templates")
             ;; When an HTML file changes, trigger the compilation of
-            ;; any files which use macros to read in templates. 
-            :triggers {:html [#"helloworld_app/app.js"]}}
+            ;; any files which use macros to read in templates.
+            :triggers {:html [#"curriculum_app/app.js"]}}
     :application {:generated-javascript "generated-js"
                   :api-server {:host "localhost" :port 8080 :log-fn nil}
                   :default-template "application.html"
@@ -26,15 +26,15 @@
     :control-panel {:design {:uri "/design.html"
                              :name "Design"
                              :order 0}}
-    :aspects {:development {:uri "/helloworld-app-dev.html"
+    :aspects {:development {:uri "/curriculum-app-dev.html"
                             :name "Development"
-                            :out-file "helloworld-app-dev.js"
-                            :scripts ["goog.require('helloworld_app.app');"
-                                      "helloworld_app.app.main();"]
+                            :out-file "curriculum-app-dev.js"
+                            :scripts ["goog.require('curriculum_app.app');"
+                                      "curriculum_app.app.main();"]
                             :order 1}
-              :production {:uri "/helloworld-app.html"
+              :production {:uri "/curriculum-app.html"
                            :name "Production"
                            :optimizations :advanced
-                           :out-file "helloworld-app.js"
-                           :scripts ["helloworld_app.app.main();"]
+                           :out-file "curriculum-app.js"
+                           :scripts ["curriculum_app.app.main();"]
                            :order 2}}}})
