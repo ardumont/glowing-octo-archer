@@ -14,10 +14,13 @@
                   :phone       (s/join " " (reverse ["03" "79" "08" "99" "06"]))}
 
    :jobs         {:current     :sfeir
-                  :sfeir       {:as     "software engineer/developer/devops"
-                                :period "2011 - now"}
-                  :sopra-group {:as     "software engineer"
-                                :period "2007-2011"}}
+                  :sfeir       {:as     "Software Engineer/Developer/Devops"
+                                :period "2011"}
+                  :previous-pos [:sopra-group :lcfrance]
+                  :sopra-group {:as     "Software Engineer"
+                                :period "2007-2011"}
+                  :lcfrance    {:as     "Web developer"
+                                :period "2005-2006"}}
 
    :experience   :contact-me-for-that
 

@@ -14,9 +14,18 @@
             [curriculum-app.cv :as cv]
             [clojure.string :as s]))
 
-(defn render
+(defn render-identity
   []
-  (let [{:keys [name first-name middle-name address city country birth emails phone]} (get-in cv/cv [:identity])]
+  (let [{:keys [name
+                first-name
+                middle-name
+                address
+                city
+                country
+                birth
+                emails
+                phone]} (:identity cv/cv)]
+
     (d/set-text! (d/by-id "firstname-name")
                  (->> (interpose " " [first-name middle-name name])
                       (s/join "")))
@@ -26,8 +35,16 @@
                       (s/join "")))
     (d/set-text! (d/by-id "birth") birth)
     (d/set-text! (d/by-id "email") (s/join " - " emails))
-    (d/set-text! (d/by-id "phone") phone)
-    ))
+    (d/set-text! (d/by-id "phone") phone)))
+
+(defn render-current-position
+  []
+  (let [{:keys [current] :as current-pos} (:jobs cv/cv)
+        {:keys [as period]} (current-pos current)]
+    (d/set-text! (d/by-id "as") as)
+    (d/set-text! (d/by-id "current") (name current))
+    (d/set-text! (d/by-id "period") period)))
 
 (defn ^:export main []
-  (render))
+  (render-identity)
+  (render-current-position))
