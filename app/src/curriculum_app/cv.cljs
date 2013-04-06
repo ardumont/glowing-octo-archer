@@ -37,11 +37,12 @@
 
    :skills       {:languages                ["clojure" "haskell" "ruby" "*sh" "c" "php" "*sql" "xhtml" "java" "etc..."]
                   :other-languages          ["emacs-lisp" "common-lisp" "clojurescript" "objective-c" "arduino programming language"]
-                  :dvcs                     ["git"]
+                  :DVCS                     ["git"]
                   :tools                    ["GNU/Linux" "emacs" "leiningen" "eclipse" "maven" "ant" "Makefile" "*sh"]
                   :configuration-management ["puppet"]
                   :nosql-databases          ["hadoop" "datomic"]
-                  :sql-databases            ["mysql" "postgresql" "oracle"]}
+                  :sql-databases            ["mysql" "postgresql" "oracle"]
+                  :spoken-languages         ["english"]}
 
    :profiles     {:github            "https://github.com/ardumont"
                   :twitter           "http://twitter.com/@ardumont"
