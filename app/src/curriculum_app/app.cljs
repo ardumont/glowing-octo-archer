@@ -66,11 +66,17 @@
 (defn render-hobbies
   []
   (let [hobbies (:hobbies cv/cv)]
-    (d/set-text! (d/by-id "hobbies") (s/join " " hobbies))))
+    (d/set-text! (d/by-id "hobbies") (s/join ", " hobbies))))
+
+(defn render-misc
+  []
+  (let [misc (:misc cv/cv)]
+    (d/set-text! (d/by-id "misc") (s/join ", " misc))))
 
 (defn ^:export main []
   (render-identity)
   (render-current-position)
   (render-previous-positions)
   (render-formations)
-  (render-hobbies))
+  (render-hobbies)
+  (render-misc))
