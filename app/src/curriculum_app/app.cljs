@@ -53,10 +53,18 @@
                            [as "at" (name p) "for" period]))
                        previous-pos)]
     (doseq [p positions]
-      (d/append! (d/by-id "ppos") (str "<div>" (s/join " " p) "</div>")))
-    ))
+      (d/append! (d/by-id "ppos") (str "<div>" (s/join " " p) "</div>")))))
+
+(defn render-formations
+  []
+  (let [form (:formations cv/cv)
+        period (:period form)
+        {:keys [title college]} (:master form)
+        formation [title "at" college "for" period]]
+    (d/set-text! (d/by-id "formation") (s/join " " formation))))
 
 (defn ^:export main []
   (render-identity)
   (render-current-position)
-  (render-previous-positions))
+  (render-previous-positions)
+  (render-formations))

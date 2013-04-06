@@ -22,6 +22,17 @@
                   :lcfrance     {:as     "Web developer"
                                  :period "2005-2006"}}
 
+   :formations   {:period "2001-2007"
+                  :deug {:period "2001-2004"
+                         :title   "DEUG MIAS option informatique"
+                         :college "Université Paris 7 Denis Diderot"}
+                  :licence {:period "2005"
+                            :title   "Licence informatique"
+                            :college "Université Paris 7 Denis Diderot"}
+                  :master {:period "2006-2007"
+                           :title   "Master Ingénierie Informatique (II), Systémes, Réseaux et Internet"
+                           :college "Université Paris 7 Denis Diderot"}}
+
    :experience   :contact-me-for-that
 
    :technologies {:languages                ["clojure" "haskell" "ruby" "*sh" "c" "php" "*sql" "xhtml" "java" "etc..."]
