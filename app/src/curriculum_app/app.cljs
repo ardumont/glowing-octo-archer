@@ -63,8 +63,14 @@
         formation [title "at" college "for" period]]
     (d/set-text! (d/by-id "formation") (s/join " " formation))))
 
+(defn render-hobbies
+  []
+  (let [hobbies (:hobbies cv/cv)]
+    (d/set-text! (d/by-id "hobbies") (s/join " " hobbies))))
+
 (defn ^:export main []
   (render-identity)
   (render-current-position)
   (render-previous-positions)
-  (render-formations))
+  (render-formations)
+  (render-hobbies))

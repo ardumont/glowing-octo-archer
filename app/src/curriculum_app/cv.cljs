@@ -59,4 +59,4 @@
 
    :specifics    ["father of 2" "geek and proud of it" "linuxian" "clojurian" "emacs user" "free software" "simplicity matters"]
 
-   :hobby        ["clojure" "coding" "reading" "running" "roller" "guitar" "drum"]})
+   :hobbies      ["clojure" "coding" "reading" "running" "roller" "guitar" "drum"]})
