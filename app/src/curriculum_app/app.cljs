@@ -79,9 +79,9 @@
         skills-keys (keys skills)
         all-skills (for [k skills-keys]
                      [(name k) (skills k)])]
-    (doseq [[s sks] all-skills]
-      (d/append! (d/by-id "skills")
-                 (t/node [:div (str s ": " (s/join ", " sks))])))))
+    (d/append! (d/by-id "skills")
+               (t/node [:div (for [[s sks] all-skills]
+                               [:li.dash (str s " - " (s/join ", " sks))])]))))
 
 (defn render-profiles
   []
@@ -89,9 +89,9 @@
         profiles-keys (keys profiles)
         all-profiles (for [k profiles-keys]
                      [(name k) (profiles k)])]
-    (doseq [[p ps] all-profiles]
-      (d/append! (d/by-id "profiles")
-                 (t/node [:div (str p ": ") [:span [:a {:href ps} ps]]])))))
+    (d/append! (d/by-id "profiles")
+               (t/node [:div (for [[p ps] all-profiles]
+                               [:li.dash (str p " - ") [:span [:a {:href ps} ps]]])]))))
 
 (defn render-projects
   []
@@ -99,9 +99,9 @@
         projects-keys (keys projects)
         all-projects (for [k projects-keys]
                      [(name k) (projects k)])]
-    (doseq [[p ps] all-projects]
-      (d/append! (d/by-id "projects")
-                 (t/node [:div (str p ": ") [:span [:a {:href ps} ps]]])))))
+    (d/append! (d/by-id "projects")
+               (t/node [:div (for [[p ps] all-projects]
+                               [:li.dash (str p " - ") [:span [:a {:href ps} ps]]])]))))
 
 (defn render-xp
   []
@@ -109,9 +109,9 @@
         experiences-keys (keys experiences)
         all-experiences (for [k experiences-keys]
                           [(-> k name s/capitalize) (experiences k)])]
-    (doseq [[x xp] all-experiences]
-      (d/append! (d/by-id "xp")
-                 (t/node [:div (str x ": " (s/join ", " xp))])))))
+    (d/append! (d/by-id "xp")
+               (t/node [:div (for [[x xp] all-experiences]
+                               [:li.dash (str x " - " (s/join ", " xp))])]))))
 
 (defn ^:export main []
   (render-identity)
