@@ -13,11 +13,11 @@
 /* structure */
 
 #main {
-	width:780px;
+	width:760px;
 }
 
 .info {
-	width:773px;
+	width:753px;
 }
 
 #main {
@@ -75,7 +75,6 @@ th {
 }
 
 .photo {
-	background:url(antoine.jpg) center no-repeat;
 	background:url(antoine.070307.jpg) center no-repeat;
 }
 
