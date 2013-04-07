@@ -27,22 +27,19 @@
                 emails
                 phone]} (:identity cv/cv)]
 
-    (d/set-text! (d/by-id "firstname-name")
-                 (->> (interpose " " [first-name middle-name name])
-                      (s/join "")))
-    (d/add-class! (d/by-id "firstname-name") "title")
-    (d/set-text! (d/by-id "address")
-                 (->> (interpose " - " [address city country])
-                      (s/join "")))
-    (d/set-text! (d/by-id "birth") birth)
-    (d/set-text! (d/by-id "email") (s/join " - " emails))
-    (d/set-text! (d/by-id "phone") phone)))
+    (d/append! (d/by-id "profile") (t/node [:div.title (s/join " " [first-name middle-name name])]))
+    (d/append! (d/by-id "profile") (t/node [:div birth]))
+    (d/append! (d/by-id "profile") (t/node [:div (s/join " - " [address city country])]))
+    (d/append! (d/by-id "profile") (t/node [:div (s/join " - " emails)]))
+    (d/append! (d/by-id "profile") (t/node [:div phone]))
+    (d/append! (d/by-id "profile") (t/node [:span.photo]))))
 
 (defn render-current-position
   []
   (let [{:keys [current] :as current-pos} (:jobs cv/cv)
         {:keys [as period]} (current-pos current)]
-    (d/set-text! (d/by-id "cpos") (str as " at " (-> current name s/capitalize) " since " period))))
+    (d/append! (d/by-id "cpos")
+               (t/node [:div (str as " at " (-> current name s/capitalize) " since " period)]))))
 
 (defn render-previous-positions
   []
@@ -52,7 +49,8 @@
                            [as "at" (-> p name s/capitalize) "for the period" period]))
                        previous-pos)]
     (doseq [p positions]
-      (d/append! (d/by-id "ppos") (str "<div>" (s/join " " p) "</div>")))))
+      (d/append! (d/by-id "ppos")
+                 (t/node [:div (s/join " " p)])))))
 
 (defn render-formations
   []
@@ -60,17 +58,20 @@
         period (:period form)
         {:keys [title college]} (:master form)
         formation [title "at" college "for" period]]
-    (d/set-text! (d/by-id "formation") (s/join " " formation))))
+    (d/append! (d/by-id "formation")
+               (t/node [:div (s/join " " formation)]))))
 
 (defn render-hobbies
   []
   (let [hobbies (:hobbies cv/cv)]
-    (d/set-text! (d/by-id "hobbies") (s/join ", " hobbies))))
+    (d/append! (d/by-id "hobbies")
+               (t/node [:div (s/join ", " hobbies)]))))
 
 (defn render-misc
   []
   (let [misc (:misc cv/cv)]
-    (d/set-text! (d/by-id "misc") (s/join ", " misc))))
+    (d/append! (d/by-id "misc")
+               (t/node [:div (s/join ", " misc)]))))
 
 (defn render-skills
   []
@@ -79,7 +80,8 @@
         all-skills (for [k skills-keys]
                      [(name k) (skills k)])]
     (doseq [[s sks] all-skills]
-      (d/append! (d/by-id "skills") (str "<div>" s ": " (s/join ", " sks) "</div>")))))
+      (d/append! (d/by-id "skills")
+                 (t/node [:div (str s ": " (s/join ", " sks))])))))
 
 (defn render-profiles
   []
@@ -88,7 +90,8 @@
         all-profiles (for [k profiles-keys]
                      [(name k) (profiles k)])]
     (doseq [[p ps] all-profiles]
-      (d/append! (d/by-id "profiles") (str "<div>" p ": " "<a href=\"" ps "\">" ps "</a></div>")))))
+      (d/append! (d/by-id "profiles")
+                 (t/node [:div (str p ": ") [:span [:a {:href ps} ps]]])))))
 
 (defn render-projects
   []
@@ -97,7 +100,8 @@
         all-projects (for [k projects-keys]
                      [(name k) (projects k)])]
     (doseq [[p ps] all-projects]
-      (d/append! (d/by-id "projects") (str "<div>" p ": " "<a href=\"" ps "\">" ps "</a></div>")))))
+      (d/append! (d/by-id "projects")
+                 (t/node [:div (str p ": ") [:span [:a {:href ps} ps]]])))))
 
 (defn render-xp
   []
@@ -106,7 +110,8 @@
         all-experiences (for [k experiences-keys]
                           [(-> k name s/capitalize) (experiences k)])]
     (doseq [[x xp] all-experiences]
-      (d/append! (d/by-id "xp") (str "<div>" x ": " (s/join ", " xp) "</div>")))))
+      (d/append! (d/by-id "xp")
+                 (t/node [:div (str x ": " (s/join ", " xp))])))))
 
 (defn ^:export main []
   (render-identity)
