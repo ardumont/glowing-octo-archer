@@ -10,9 +10,10 @@
 ; You must not remove this notice, or any other, from this software.
 
 (ns curriculum-app.app
-  (:require [domina :as d]
+  (:require [domina            :as d]
+            [dommy.template    :as t]
             [curriculum-app.cv :as cv]
-            [clojure.string :as s]))
+            [clojure.string    :as s]))
 
 (defn render-identity
   []
@@ -98,10 +99,20 @@
     (doseq [[p ps] all-projects]
       (d/append! (d/by-id "projects") (str "<div>" p ": " "<a href=\"" ps "\">" ps "</a></div>")))))
 
+(defn render-xp
+  []
+  (let [experiences (:xp cv/cv)
+        experiences-keys (keys experiences)
+        all-experiences (for [k experiences-keys]
+                          [(-> k name s/capitalize) (experiences k)])]
+    (doseq [[x xp] all-experiences]
+      (d/append! (d/by-id "xp") (str "<div>" x ": " (s/join ", " xp) "</div>")))))
+
 (defn ^:export main []
   (render-identity)
   (render-current-position)
   (render-previous-positions)
+  (render-xp)
   (render-skills)
   (render-profiles)
   (render-projects)

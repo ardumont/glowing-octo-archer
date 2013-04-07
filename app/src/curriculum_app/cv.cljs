@@ -20,7 +20,9 @@
                   :sopra-group  {:as     "Software Engineer"
                                  :period "2007-2011"}
                   :lcfrance     {:as     "Web developer"
-                                 :period "2005-2006"}}
+                                 :period "2005-2006"}
+                  :linkedbynet  {:as     "Intranet developer"
+                                 :period "2005-2005"}}
 
    :formations   {:period "2001-2007"
                   :deug {:period "2001-2004"
@@ -33,7 +35,14 @@
                            :title   "Master Ingénierie Informatique (II), Systémes, Réseaux et Internet"
                            :college "Université Paris 7 Denis Diderot"}}
 
-   :experience   :contact-me-for-that
+   :xp           {:sfeir       ["Java development"
+                                "Development tools"
+                                "Devops tools development"
+                                "Cluster installation"
+                                "POC"]
+                  :sopra-group ["Maintien en conditions opérationnelles de multiples applications"]
+                  :lcfrance    ["Web development"]
+                  :linkbynet   ["Intranet tools development"]}
 
    :skills       {:programming-languages    ["Clojure" "Haskell" "Ruby" "*sh" "C" "PHP" "*SQL" "XHTML" "Java" "etc..."]
                   :other-languages          ["Emacs-lisp" "Common-lisp" "Clojurescript" "Objective-c" "Arduino programming language"]
