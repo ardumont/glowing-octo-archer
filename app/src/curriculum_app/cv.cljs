@@ -6,12 +6,13 @@
   {:identity     {:name        "DUMONT"
                   :first-name  "Antoine"
                   :middle-name "Romain"
+                  :title       "Software Engineer/Functional Developer/Devops"
+                  :xp          "6,5 years of experience"
                   :birth       "10/22/1982 - Roubaix (59)"
                   :address     "43 bis boulevard Jean Moulin"
                   :city        "93190 Livry Gargan"
                   :country     "FRANCE"
-                  :emails      (map #(s/join \@ %) [["antoine.romain.dumont" "gmail.com"]])
-                  :phone       (s/join " " (reverse ["03" "79" "08" "99" "06"]))}
+                  :emails      (map #(s/join " [ a t ] " %) [["antoine.romain.dumont" "gmail.com"]])}
 
    :jobs         {:current      :sfeir
                   :sfeir        {:as     "Software Engineer/Developer/Devops"

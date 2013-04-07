@@ -21,9 +21,10 @@
   (d/append! (d/by-id html-id) (t/node html-data)))
 
 (defn render-identity! []
-  (let [{:keys [name first-name middle-name address city country birth emails phone]} (:identity cv/cv)
+  (let [{:keys [name first-name middle-name address city country emails phone title xp]} (:identity cv/cv)
         profile [[:div.title (s/join " " [first-name middle-name name])]
-                 [:div birth]
+                 [:div title]
+                 [:div (str " (" xp ")")]
                  [:div (s/join " - " [address city country])]
                  [:div (s/join " - " emails)]
                  [:div phone]
