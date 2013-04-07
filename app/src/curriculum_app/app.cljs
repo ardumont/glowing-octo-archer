@@ -15,112 +15,83 @@
             [curriculum-app.cv :as cv]
             [clojure.string    :as s]))
 
-(defn render-identity
-  []
-  (let [{:keys [name
-                first-name
-                middle-name
-                address
-                city
-                country
-                birth
-                emails
-                phone]} (:identity cv/cv)]
+(defn render-html!
+  "Given the html data, modify the dom id html-id with such data"
+  [html-data html-id]
+  (d/append! (d/by-id html-id) (t/node html-data)))
 
-    (d/append! (d/by-id "profile") (t/node [:div.title (s/join " " [first-name middle-name name])]))
-    (d/append! (d/by-id "profile") (t/node [:div birth]))
-    (d/append! (d/by-id "profile") (t/node [:div (s/join " - " [address city country])]))
-    (d/append! (d/by-id "profile") (t/node [:div (s/join " - " emails)]))
-    (d/append! (d/by-id "profile") (t/node [:div phone]))
-    (d/append! (d/by-id "profile") (t/node [:span.photo]))))
+(defn render-identity! []
+  (let [{:keys [name first-name middle-name address city country birth emails phone]} (:identity cv/cv)
+        profile [[:div.title (s/join " " [first-name middle-name name])]
+                 [:div birth]
+                 [:div (s/join " - " [address city country])]
+                 [:div (s/join " - " emails)]
+                 [:div phone]
+                 [:span.photo]]]
+    (doseq [p profile] (render-html! p "profile"))))
 
-(defn render-current-position
-  []
+(defn render-current-position! []
   (let [{:keys [current] :as current-pos} (:jobs cv/cv)
         {:keys [as period]} (current-pos current)]
-    (d/append! (d/by-id "cpos")
-               (t/node [:div (str as " at " (-> current name s/capitalize) " since " period)]))))
+    (render-html! [:div (str as " at " (-> current name s/capitalize) " since " period)] "cpos")))
 
-(defn render-previous-positions
-  []
+(defn render-previous-positions! []
   (let [previous-pos (get-in cv/cv [:jobs :previous-pos])
-        positions (map (fn [p]
-                         (let [{:keys [as period]} (get-in cv/cv [:jobs p])]
-                           [as "at" (-> p name s/capitalize) "for the period" period]))
+        positions (map (fn [p] (let [{:keys [as period]} (get-in cv/cv [:jobs p])]
+                                [as "at" (-> p name s/capitalize) "for the period" period]))
                        previous-pos)]
-    (doseq [p positions]
-      (d/append! (d/by-id "ppos")
-                 (t/node [:div (s/join " " p)])))))
+    (doseq [p positions] (render-html! [:div (s/join " " p)] "ppos"))))
 
-(defn render-formations
-  []
+(defn render-formations! []
   (let [form (:formations cv/cv)
         period (:period form)
-        {:keys [title college]} (:master form)
-        formation [title "at" college "for" period]]
-    (d/append! (d/by-id "formation")
-               (t/node [:div (s/join " " formation)]))))
+        {:keys [title college]} (:master form)]
+    (render-html! [:div (str title " at " college " for " period)] "formation")))
 
-(defn render-hobbies
-  []
-  (let [hobbies (:hobbies cv/cv)]
-    (d/append! (d/by-id "hobbies")
-               (t/node [:div (s/join ", " hobbies)]))))
+(defn render-hobbies! []
+  (render-html! [:div (s/join ", " (:hobbies cv/cv))] "hobbies"))
 
-(defn render-misc
-  []
-  (let [misc (:misc cv/cv)]
-    (d/append! (d/by-id "misc")
-               (t/node [:div (s/join ", " misc)]))))
+(defn render-misc! []
+  (render-html! [:div (s/join ", " (:misc cv/cv))] "misc"))
 
-(defn render-skills
-  []
-  (let [skills (:skills cv/cv)
-        skills-keys (keys skills)
-        all-skills (for [k skills-keys]
-                     [(name k) (skills k)])]
-    (d/append! (d/by-id "skills")
-               (t/node [:div (for [[s sks] all-skills]
-                               [:li.dash (str s " - " (s/join ", " sks))])]))))
+(defn render-key-csv
+  "Given a key and comma separated values, render a html li data structure of k - v0, v1, ..."
+  [k v]
+  [:li.dash (str k " - " (s/join ", " v))])
 
-(defn render-profiles
-  []
-  (let [profiles (:profiles cv/cv)
-        profiles-keys (keys profiles)
-        all-profiles (for [k profiles-keys]
-                     [(name k) (profiles k)])]
-    (d/append! (d/by-id "profiles")
-               (t/node [:div (for [[p ps] all-profiles]
-                               [:li.dash (str p " - ") [:span [:a {:href ps} ps]]])]))))
+(defn render-key-csv-href
+  "Given a key and comma separated values containing href, render a html li data structure of k - v0href, v1href, ..."
+  [k vh]
+  [:li.dash (str k " - ") [:span [:a {:href vh} vh]]])
 
-(defn render-projects
-  []
-  (let [projects (:projects cv/cv)
-        projects-keys (keys projects)
-        all-projects (for [k projects-keys]
-                     [(name k) (projects k)])]
-    (d/append! (d/by-id "projects")
-               (t/node [:div (for [[p ps] all-projects]
-                               [:li.dash (str p " - ") [:span [:a {:href ps} ps]]])]))))
+(defn compute-map-key-csv
+  "Given a map with key and list as values, compute the html data"
+  [map-data render-html-fn]
+  (let [keys (keys map-data)
+        all (for [k keys]
+              [(name k) (map-data k)])]
+    [:div (for [[k v] all] (render-html-fn k v))]))
 
-(defn render-xp
-  []
-  (let [experiences (:xp cv/cv)
-        experiences-keys (keys experiences)
-        all-experiences (for [k experiences-keys]
-                          [(-> k name s/capitalize) (experiences k)])]
-    (d/append! (d/by-id "xp")
-               (t/node [:div (for [[x xp] all-experiences]
-                               [:li.dash (str x " - " (s/join ", " xp))])]))))
+(defn render-skills! []
+  (-> cv/cv :skills (compute-map-key-csv render-key-csv) (render-html! "skills")))
+
+(defn render-xp! []
+    (-> cv/cv :xp (compute-map-key-csv render-key-csv) (render-html! "xp")))
+
+(defn render-projects! []
+  (-> cv/cv :projects (compute-map-key-csv render-key-csv-href) (render-html! "projects")))
+
+(defn render-profiles! []
+    (-> cv/cv :profiles (compute-map-key-csv render-key-csv-href) (render-html! "profiles")))
 
 (defn ^:export main []
-  (render-identity)
-  (render-current-position)
-  (render-previous-positions)
-  (render-xp)
-  (render-skills)
-  (render-profiles)
-  (render-projects)
-  (render-formations)
-  (render-hobbies)
-  (render-misc))
+  (render-identity!)
+  (render-current-position!)
+  (render-previous-positions!)
+  (render-xp!)
+  (render-skills!)
+  (render-profiles!)
+  (render-projects!)
+  (render-formations!)
+  (render-hobbies!)
+  (render-misc!))

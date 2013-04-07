@@ -67,6 +67,6 @@
                   :clojure-paris-ug  "https://groups.google.com/forum/?fromgroups#!forum/clojure-paris-user-group"
                   :projectsion       "http://projectsion.sourceforge.net/"}
 
-   :misc         ["father of 2" "Geek and proud of it" "Linuxian" "Clojurian" "Emacs user" "Free Software" "Simplicity Matters" "Functional"]
+   :misc         ["Father of 2" "Geek and proud of it" "Linuxian" "Clojurian" "Emacs user" "Free Software" "Simplicity Matters" "Functional"]
 
    :hobbies      ["Clojure*" "Coding" "Reading" "Running" "Roller" "Guitar" "Drum"]})
