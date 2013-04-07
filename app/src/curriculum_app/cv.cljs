@@ -35,14 +35,14 @@
 
    :experience   :contact-me-for-that
 
-   :skills       {:languages                ["clojure" "haskell" "ruby" "*sh" "c" "php" "*sql" "xhtml" "java" "etc..."]
-                  :other-languages          ["emacs-lisp" "common-lisp" "clojurescript" "objective-c" "arduino programming language"]
-                  :DVCS                     ["git"]
-                  :tools                    ["GNU/Linux" "emacs" "leiningen" "eclipse" "maven" "ant" "Makefile" "*sh"]
-                  :configuration-management ["puppet"]
-                  :nosql-databases          ["hadoop" "datomic"]
-                  :sql-databases            ["mysql" "postgresql" "oracle"]
-                  :spoken-languages         ["english"]}
+   :skills       {:programming-languages    ["Clojure" "Haskell" "Ruby" "*sh" "C" "PHP" "*SQL" "XHTML" "Java" "etc..."]
+                  :other-languages          ["Emacs-lisp" "Common-lisp" "Clojurescript" "Objective-c" "Arduino programming language"]
+                  :DVCS                     ["Git"]
+                  :tools                    ["GNU/Linux" "Emacs" "Leiningen" "Eclipse" "Apache Maven" "Apache Ant" "Makefile"]
+                  :configuration-management ["Puppet" "Pallet"]
+                  :nosql-databases          ["Hadoop" "Datomic"]
+                  :sql-databases            ["Mysql" "Postgresql" "Oracle"]
+                  :spoken-languages         ["English"]}
 
    :profiles     {:github            "https://github.com/ardumont"
                   :twitter           "http://twitter.com/@ardumont"
@@ -58,6 +58,6 @@
                   :clojure-paris-ug  "https://groups.google.com/forum/?fromgroups#!forum/clojure-paris-user-group"
                   :projectsion       "http://projectsion.sourceforge.net/"}
 
-   :misc         ["father of 2" "geek and proud of it" "linuxian" "clojurian" "emacs user" "free software" "simplicity matters"]
+   :misc         ["father of 2" "Geek and proud of it" "Linuxian" "Clojurian" "Emacs user" "Free Software" "Simplicity Matters" "Functional"]
 
-   :hobbies      ["clojure" "coding" "reading" "running" "roller" "guitar" "drum"]})
+   :hobbies      ["Clojure*" "Coding" "Reading" "Running" "Roller" "Guitar" "Drum"]})

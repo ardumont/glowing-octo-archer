@@ -41,14 +41,14 @@
   []
   (let [{:keys [current] :as current-pos} (:jobs cv/cv)
         {:keys [as period]} (current-pos current)]
-    (d/set-text! (d/by-id "cpos") (str as " at " (name current) " since " period))))
+    (d/set-text! (d/by-id "cpos") (str as " at " (-> current name s/capitalize) " since " period))))
 
 (defn render-previous-positions
   []
   (let [previous-pos (get-in cv/cv [:jobs :previous-pos])
         positions (map (fn [p]
                          (let [{:keys [as period]} (get-in cv/cv [:jobs p])]
-                           [as "at" (name p) "for" period]))
+                           [as "at" (-> p name s/capitalize) "for the period" period]))
                        previous-pos)]
     (doseq [p positions]
       (d/append! (d/by-id "ppos") (str "<div>" (s/join " " p) "</div>")))))
@@ -73,7 +73,7 @@
 
 (defn render-skills
   []
-  (let [skills (-> cv/cv :skills)
+  (let [skills (:skills cv/cv)
         skills-keys (keys skills)
         all-skills (for [k skills-keys]
                      [(name k) (skills k)])]
@@ -82,7 +82,7 @@
 
 (defn render-profiles
   []
-  (let [profiles (-> cv/cv :profiles)
+  (let [profiles (:profiles cv/cv)
         profiles-keys (keys profiles)
         all-profiles (for [k profiles-keys]
                      [(name k) (profiles k)])]
@@ -91,7 +91,7 @@
 
 (defn render-projects
   []
-  (let [projects (-> cv/cv :projects)
+  (let [projects (:projects cv/cv)
         projects-keys (keys projects)
         all-projects (for [k projects-keys]
                      [(name k) (projects k)])]
