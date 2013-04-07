@@ -36,23 +36,30 @@
                            :title   "Master Ingénierie Informatique (II), Systémes, Réseaux et Internet"
                            :college "Université Paris 7 Denis Diderot"}}
 
-   :xp           {:sfeir       ["Java development"
-                                "Development tools"
-                                "Devops tools development"
-                                "Cluster installation"
-                                "POC"]
-                  :sopra-group ["Maintien en conditions opérationnelles de multiples applications"]
+   :xp           {:sfeir       ["Development (frontend, backend, RESTful applications)"
+                                "Tools for developers, Automatization (shell scripts, Makefile, documentation, etc...)"
+                                "Continuous integration (Cloudbees, Jenkins, etc...)"
+                                "Devops tools development (Puppet, scripts, READMEs)"
+                                "Environment deployment (cluster included)"
+                                "Proof of Concepts (P.O.C.)"
+                                "Technical leader"
+                                "etc..."]
+                  :sopra-group ["M.C.0 de multiples applications"
+                                "Technical leader"]
                   :lcfrance    ["Web development"]
                   :linkbynet   ["Intranet tools development"]}
 
    :skills       {:programming-languages    ["Clojure" "Haskell" "Ruby" "*sh" "C" "PHP" "*SQL" "XHTML" "Java" "etc..."]
-                  :other-languages          ["Emacs-lisp" "Common-lisp" "Clojurescript" "Objective-c" "Arduino programming language"]
+                  :other-languages          ["Emacs-lisp" "Common-lisp" "Clojurescript" "Objective-c"]
                   :DVCS                     ["Git"]
+                  :RCS                      ["Apache Subversion" "CVS"]
                   :tools                    ["GNU/Linux" "Emacs" "Leiningen" "Eclipse" "Apache Maven" "Apache Ant" "Makefile"]
                   :configuration-management ["Puppet" "Pallet"]
                   :nosql-databases          ["Hadoop" "Datomic"]
                   :sql-databases            ["Mysql" "Postgresql" "Oracle"]
-                  :spoken-languages         ["English"]}
+                  :methodologies            ["Agilily (Scrum)" "pair programming" "remote programming"]
+                  :spoken-languages         ["English"]
+                  :others                   ["autodidact" "continuous learning" "functional developer" "Arduino"]}
 
    :profiles     {:github            "https://github.com/ardumont"
                   :twitter           "http://twitter.com/@ardumont"
