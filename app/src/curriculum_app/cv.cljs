@@ -37,7 +37,7 @@
                            :college "Université Paris 7 Denis Diderot"}}
 
    :xp           {:sfeir       ["Development (frontend, backend, RESTful applications)"
-                                "Tools for developers, Automatization (shell scripts, Makefile, documentation, etc...)"
+                                "Tools for developers, Automation (shell scripts, Makefile, documentation, etc...)"
                                 "Continuous integration (Cloudbees, Jenkins, Bamboo, etc...)"
                                 "Devops tools development (Puppet, scripts, READMEs)"
                                 "Environment deployment (cluster included)"
