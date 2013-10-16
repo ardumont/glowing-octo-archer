@@ -50,7 +50,7 @@
                   :linkbynet   ["Intranet tools development"]}
 
    :skills       {:programming-languages    ["Clojure" "Haskell" "Ruby" "*sh" "C" "PHP" "*SQL" "XHTML" "Java" "etc..."]
-                  :other-languages          ["Emacs-lisp" "Common-lisp" "Clojurescript" "Objective-c"]
+                  :other-languages          ["Emacs-lisp" "Common-lisp" "OCaml" "Scheme" "Clojurescript" "Objective-c"]
                   :DVCS                     ["Git"]
                   :RCS                      ["Apache Subversion" "CVS"]
                   :tools                    ["GNU/Linux" "Emacs" "Leiningen" "Eclipse" "Apache Maven" "Apache Ant" "Makefile"]
