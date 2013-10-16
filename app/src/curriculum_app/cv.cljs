@@ -38,7 +38,7 @@
 
    :xp           {:sfeir       ["Development (frontend, backend, RESTful applications)"
                                 "Tools for developers, Automatization (shell scripts, Makefile, documentation, etc...)"
-                                "Continuous integration (Cloudbees, Jenkins, etc...)"
+                                "Continuous integration (Cloudbees, Jenkins, Bamboo, etc...)"
                                 "Devops tools development (Puppet, scripts, READMEs)"
                                 "Environment deployment (cluster included)"
                                 "Proof of Concepts (P.O.C.)"
@@ -73,8 +73,26 @@
                   :4-clojure         "http://www.4clojure.com/user/ardumont"
                   :project-euler     "http://projecteuler.net/profile/ardumont.png"
                   :clojure-paris-ug  "https://groups.google.com/forum/?fromgroups#!forum/clojure-paris-user-group"
+                  :org-trello        "http://ardumont.github.io/org-trello"
                   :projectsion       "http://projectsion.sourceforge.net/"}
 
-   :misc         ["Father of 2" "Geek and proud of it" "Linuxian" "Clojurian" "Emacs user" "Free Software" "Simplicity Matters" "Functional"]
+   :misc         ["Father of 2"
+                  "Geek and proud of it"
+                  "Linuxian"
+                  "Clojurian"
+                  "Emacs user"
+                  "Free Software"
+                  "Simplicity Matters"
+                  "Functional"]
 
-   :hobbies      ["Clojure*" "Coding" "Reading" "Running" "Roller" "Guitar" "Drum"]})
+   :hobbies      ["Learning"
+                  "Solving problems"
+                  "Haskell"
+                  "Clojure*"
+                  "Coding"
+                  "Reading"
+                  "Running"
+                  "Roller"
+                  "Guitar"
+                  "Drum"
+                  "Books"]})
