@@ -7,7 +7,7 @@
                   :first-name  "Antoine"
                   :middle-name "Romain"
                   :title       "Software Engineer/Functional Developer/Devops"
-                  :xp          "6,5 years of experience"
+                  :xp          "7,5 years of experience"
                   :birth       "10/22/1982 - Roubaix (59)"
                   :address     "43 bis boulevard Jean Moulin"
                   :city        "93190 Livry Gargan"
@@ -64,17 +64,16 @@
    :profiles     {:github            "https://github.com/ardumont"
                   :twitter           "http://twitter.com/@ardumont"
                   :gravatar          "http://en.gravatar.com/ardumont"
-                  :linkedin          "http://www.linkedin.com/pub/antoine-romain-dumont/5/158/655"
-                  :viadeo            "http://www.viadeo.com/fr/profile/antoine-romain.dumont"
-                  :facebook          "https://www.facebook.com/profile.php?id=642018541"}
+                  :linkedin          "http://fr.linkedin.com/in/ardumont"
+                  :viadeo            "http://www.viadeo.com/fr/profile/antoine-romain.dumont"}
 
-   :projects     {:go-see-github     "https://github.com/ardumont"
-                  :my-blog           "http://adumont.fr/blog"
+   :projects     {:projectsion       "http://projectsion.sourceforge.net/"
                   :4-clojure         "http://www.4clojure.com/user/ardumont"
                   :project-euler     "http://projecteuler.net/profile/ardumont.png"
                   :clojure-paris-ug  "https://groups.google.com/forum/?fromgroups#!forum/clojure-paris-user-group"
-                  :org-trello        "http://ardumont.github.io/org-trello"
-                  :projectsion       "http://projectsion.sourceforge.net/"}
+                  :org-trello        "http://org-trello.github.io"
+                  :my-blog           "http://ardumont.github.io"
+                  :go-see-github     "https://github.com/ardumont"}
 
    :misc         ["Father of 2"
                   "Geek and proud of it"
@@ -87,12 +86,15 @@
 
    :hobbies      ["Learning"
                   "Solving problems"
+                  "Emacs"
                   "Haskell"
                   "Clojure*"
+                  "*Lisp"
                   "Coding"
                   "Reading"
                   "Running"
                   "Roller"
+                  "Skate"
+                  "Judo"
                   "Guitar"
-                  "Drum"
                   "Books"]})
