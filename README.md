@@ -3,12 +3,13 @@
 You may start the application by running the following commands:
 
 ```
-lein repl
-(dev)
-(run)
+$ nix-shell
+(nix-shell) $ lein repl
+> (dev)
+> (run)
 ```
 
-Once it is started, browse to [http://localhost:3000/curriculum-app-dev.html](http://localhost:3000/curriculum-app-dev.html).
+Browse to [http://localhost:3000/curriculum-app-dev.html](http://localhost:3000/curriculum-app-dev.html).
 
 
 ## Links

@@ -11,7 +11,7 @@
 
 (defproject curriculum-app "0.1.0-SNAPSHOT"
   :description "My cv using clojurescript and pedestal"
-  :dependencies [[org.clojure/clojure            "1.5.1"]
+  :dependencies [[org.clojure/clojure            "1.7.0"]
                  [org.clojure/tools.namespace    "0.2.1"]
                  [domina                         "1.0.1"]
                  [prismatic/dommy                "0.1.0"]
