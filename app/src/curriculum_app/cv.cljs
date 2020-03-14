@@ -14,18 +14,18 @@
                   :country     "FRANCE"
                   :emails      (map #(s/join " [ a t ] " %) [["antoine.romain.dumont" "gmail.com"]])}
 
-   :jobs         {:current      :inria
-                  :inria        {:as     "Software Engineer/Developer/Devops"
-                                 :period "2015"}
-                  :previous-pos [:sfeir :sopra-group :lcfrance :linkbynet]
-                  :sfeir        {:as     "Software Engineer/Developer/Devops"
-                                 :period "2011-2015"}
-                  :sopra-group  {:as     "Software Engineer"
-                                 :period "2007-2011"}
-                  :lcfrance     {:as     "Web developer"
-                                 :period "2005-2006"}
-                  :linkedbynet  {:as     "Intranet developer"
-                                 :period "2005-2005"}}
+   :jobs         {:current                  "Inria/Software Heritage"
+                  "Inria/Software Heritage" {:as      "Software Engineer/Developer/Devops"
+                                             :period  "2015-now"}
+                  :previous-pos             [:sfeir :sopra-group :lcfrance :linkbynet]
+                  :sfeir                    {:as     "Software Engineer/Developer/Devops"
+                                             :period "2011-2015"}
+                  :sopra-group              {:as     "Software Engineer"
+                                             :period "2007-2011"}
+                  :lcfrance                 {:as     "Web developer"
+                                             :period "2005-2006"}
+                  :linkbynet                {:as     "Intranet developer"
+                                             :period "2005-2005"}}
 
    :formations   {:period "2001-2007"
                   :deug {:period "2001-2004"
