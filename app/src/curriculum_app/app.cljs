@@ -82,6 +82,9 @@
 (defn render-projects! []
   (-> cv/cv :projects (compute-map-key-csv render-key-csv-href) (render-html! "projects")))
 
+(defn render-old-projects! []
+  (-> cv/cv :old-projects (compute-map-key-csv render-key-csv-href) (render-html! "old-projects")))
+
 (defn render-profiles! []
     (-> cv/cv :profiles (compute-map-key-csv render-key-csv-href) (render-html! "profiles")))
 
@@ -93,6 +96,7 @@
   (render-skills!)
   (render-profiles!)
   (render-projects!)
+  (render-old-projects!)
   (render-formations!)
   (render-hobbies!)
   (render-misc!))

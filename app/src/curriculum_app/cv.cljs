@@ -7,17 +7,19 @@
                   :first-name  "Antoine"
                   :middle-name "Romain"
                   :title       "Software Engineer/Functional Developer/Devops"
-                  :xp          "7,5 years of experience"
+                  :xp          "13 years of experience"
                   :birth       "10/22/1982 - Roubaix (59)"
                   :address     "43 bis boulevard Jean Moulin"
                   :city        "93190 Livry Gargan"
                   :country     "FRANCE"
                   :emails      (map #(s/join " [ a t ] " %) [["antoine.romain.dumont" "gmail.com"]])}
 
-   :jobs         {:current      :sfeir
+   :jobs         {:current      :inria
+                  :inria        {:as     "Software Engineer/Developer/Devops"
+                                 :period "2015"}
+                  :previous-pos [:sfeir :sopra-group :lcfrance :linkbynet]
                   :sfeir        {:as     "Software Engineer/Developer/Devops"
-                                 :period "2011"}
-                  :previous-pos [:sopra-group :lcfrance]
+                                 :period "2011-2015"}
                   :sopra-group  {:as     "Software Engineer"
                                  :period "2007-2011"}
                   :lcfrance     {:as     "Web developer"
@@ -36,7 +38,15 @@
                            :title   "Master Ingénierie Informatique (II), Systémes, Réseaux et Internet"
                            :college "Université Paris 7 Denis Diderot"}}
 
-   :xp           {:sfeir       ["Development (frontend, backend, RESTful applications)"
+   :xp           {:inria       ["Development"
+                                "Devops"
+                                "Environment Deployment"
+                                "Continuous Integration"
+                                "Increasing applications' test coverage"
+                                "Increase Archive Coverage"
+                                "Maintenance in operational conditions the Source code Archive"
+                                ]
+                  :sfeir       ["Development (frontend, backend, RESTful applications)"
                                 "Tools for developers, Automation (shell scripts, Makefile, documentation, etc...)"
                                 "Continuous integration (Cloudbees, Jenkins, Bamboo, etc...)"
                                 "Devops tools development (Puppet, scripts, READMEs)"
@@ -44,22 +54,23 @@
                                 "Proof of Concepts (P.O.C.)"
                                 "Technical leader"
                                 "etc..."]
-                  :sopra-group ["M.C.0 de multiples applications"
+                  :sopra-group ["Maintenance in operational conditions miscellaneous applications"
                                 "Technical leader"]
                   :lcfrance    ["Web development"]
                   :linkbynet   ["Intranet tools development"]}
 
-   :skills       {:programming-languages    ["Clojure" "Haskell" "Ruby" "*sh" "C" "PHP" "*SQL" "XHTML" "Java" "etc..."]
-                  :other-languages          ["Emacs-lisp" "Common-lisp" "OCaml" "Scheme" "Clojurescript" "Objective-c"]
-                  :DVCS                     ["Git"]
+   :skills       {:programming-languages    ["Python" "Haskell" "Ruby" "*sh" "C" "PHP" "*SQL" "etc..."]
+                  :other-languages          ["Emacs-lisp" "Clojure" "Common-lisp" "OCaml" "Scheme"]
+                  :DVCS                     ["Git" "Mercurial"]
                   :RCS                      ["Apache Subversion" "CVS"]
-                  :tools                    ["GNU/Linux" "Emacs" "Leiningen" "Eclipse" "Apache Maven" "Apache Ant" "Makefile"]
-                  :configuration-management ["Puppet" "Pallet"]
+                  :distribution             ["NixOS" "Debian" "Gentoo"]
+                  :tools                    ["GNU/Linux" "Emacs" "Apache Kafka" "Elk" "Grafana" "Sentry" "Makefile" "Nix"]
+                  :configuration-management ["Puppet" "Terraform"]
                   :nosql-databases          ["Hadoop" "Datomic"]
-                  :sql-databases            ["Mysql" "Postgresql" "Oracle"]
+                  :sql-databases            ["Postgresql" "Mysql/MariaDb" "Oracle"]
                   :methodologies            ["Agilily (Scrum)" "pair programming" "remote programming"]
-                  :spoken-languages         ["English"]
-                  :others                   ["autodidact" "continuous learning" "functional developer" "Arduino"]}
+                  :spoken-languages         ["English" "French"]
+                  :others                   ["autodidact" "continuous learning" "functional developer"]}
 
    :profiles     {:github            "https://github.com/ardumont"
                   :twitter           "http://twitter.com/@ardumont"
@@ -67,34 +78,32 @@
                   :linkedin          "http://fr.linkedin.com/in/ardumont"
                   :viadeo            "http://www.viadeo.com/fr/profile/antoine-romain.dumont"}
 
-   :projects     {:projectsion       "http://projectsion.sourceforge.net/"
-                  :4-clojure         "http://www.4clojure.com/user/ardumont"
-                  :project-euler     "http://projecteuler.net/profile/ardumont.png"
-                  :clojure-paris-ug  "https://groups.google.com/forum/?fromgroups#!forum/clojure-paris-user-group"
-                  :org-trello        "http://org-trello.github.io"
+   :projects     {:org-trello        "http://org-trello.github.io"
                   :my-blog           "http://ardumont.github.io"
                   :go-see-github     "https://github.com/ardumont"}
 
-   :misc         ["Father of 2"
-                  "Geek and proud of it"
+   :old-projects {:projectsion       "http://projectsion.sourceforge.net/"
+                  :4-clojure         "http://www.4clojure.com/user/ardumont"
+                  :project-euler     "http://projecteuler.net/profile/ardumont.png"}
+
+   :misc         ["Father of 4"
+                  "Geek"
                   "Linuxian"
                   "Clojurian"
                   "Emacs user"
                   "Free Software"
-                  "Simplicity Matters"
-                  "Functional"]
+                  "Functional"
+                  "Simplicity Matters"]
 
    :hobbies      ["Learning"
                   "Solving problems"
                   "Emacs"
                   "Haskell"
-                  "Clojure*"
                   "*Lisp"
                   "Coding"
-                  "Reading"
-                  "Running"
-                  "Roller"
-                  "Skate"
                   "Judo"
+                  "Running"
+                  "Books"
                   "Guitar"
-                  "Books"]})
+                  "Roller"
+                  "Skate"]})
